@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+   string s;
+   cin>>s;
+   long long n=s.size(),i,temp,ans=0,cnt=0;
+   temp=s[0];
+   i=0;
+   while(i<n)
+   {
+       if(s[i]==temp)
+       {
+           cnt++;
+           i++;
+           ans=max(ans,cnt);
+       }
+       else
+       {
+           ans=max(ans,cnt);
+           cnt=0;
+           temp=s[i];
+       }
+   }
+   cout<<ans<<endl;
+   return 0;
+}
