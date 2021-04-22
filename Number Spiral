@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+   long long t;
+   cin>>t;
+   while(t--)
+   {
+   long long n,m,temp,res,ans;
+   cin>>n>>m;
+   temp=max(n,m);
+   res=(temp-1)*(temp-1);
+   if (temp % 2 == 0)
+	{
+		if (temp == m)
+		{
+			ans = res + n;
+		}
+		else
+		{
+			ans = res + 2 * temp - m;
+		}
+	}
+	else
+    {
+		if (n == temp)
+		{
+			ans =res + m;
+		}
+		else
+		{
+			ans = res + 2 * temp - n;
+		}
+ 
+	}
+   cout<<ans<<endl;
+   }
+   return 0;
+}
