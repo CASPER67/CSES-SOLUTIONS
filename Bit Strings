@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define mod 1000000007;
+long long modexp(long long n)
+{
+    long long x=2;
+    long long res = 1;
+    x = x % mod;
+    if (x == 0)
+        return 0;
+    while (n > 0)
+    {
+        if (n & 1)
+            res = (res*x) % mod;
+        n = n>>1;
+        x = (x*x) % mod;
+    }
+    return res;
+}
+int main()
+{
+   ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+   long long n;
+   cin>>n;
+   cout<<modexp(n)<<endl;
+   return 0;
+}
